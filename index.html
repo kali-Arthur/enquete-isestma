@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enquête Réseau &amp; Wi-Fi — Institut ISESTMA</title>
+    <style>
+        :root {
+            --primary: #0f3460;
+            --accent: #e94560;
+            --bg: #f4f7f6;
+            --card-bg: #ffffff;
+            --text: #1a1a2e;
+            --border: #e0e0e0;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.5;
+            padding: 20px 15px;
+        }
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(135deg, var(--primary), #16213e);
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+        .header p {
+            font-size: 13px;
+            color: #b0c4de;
+        }
+        .info-box {
+            background: #fff8e7;
+            border-left: 4px solid #ffb703;
+            padding: 12px 15px;
+            margin: 15px 20px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+        form {
+            padding: 10px 20px 30px;
+        }
+        .section-title {
+            color: var(--primary);
+            font-size: 15px;
+            border-bottom: 2px solid #eef2f5;
+            padding-bottom: 6px;
+            margin: 25px 0 15px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        label.question-title {
+            display: block;
+            font-weight: 600;
+            font-size: 13.5px;
+            margin-bottom: 8px;
+            color: #222;
+        }
+        .required {
+            color: var(--accent);
+        }
+        select, input[type="text"], textarea {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            font-size: 13.5px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        select:focus, input[type="text"]:focus, textarea:focus {
+            border-color: var(--primary);
+        }
+        textarea {
+            resize: vertical;
+            min-height: 70px;
+        }
+        .option-group {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13.5px;
+            cursor: pointer;
+        }
+        .option-item input {
+            cursor: pointer;
+        }
+        .scale-group {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+        }
+        .scale-item {
+            text-align: center;
+            font-size: 12px;
+        }
+        .submit-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 14px 20px;
+            width: 100%;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.2s;
+        }
+        .submit-btn:hover {
+            background: #d6304d;
+        }
+        .footer {
+            text-align: center;
+            font-size: 11px;
+            color: #888;
+            margin-top: 20px;
+            padding-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>📶 Enquête Qualité Réseau &amp; Services Numériques</h1>
+        <p>Institut Supérieur d'Études Spécialisées (ISESTMA) • Projet SI 2026-2027</p>
+    </div>
+
+    <div class="info-box">
+        🔒 <strong>Anonyme &amp; Rapide (3 min) :</strong> Tes réponses 
+permettront d'améliorer le débit Wi-Fi, de sécuriser l'accès et 
+d'éliminer les coupures intempestives pendant les cours.
+    </div>
+
+    <!-- REMPLACE L'EMAIL DANS L'ACTION DU FORMULAIRE CI-DESSOUS -->
+    <form method="POST" id="surveyForm" action="https://formspree.io/f/xdeezqew">
+
+        <!-- SECTION 1 -->
+        <div class="section-title">📌 1. Profil de l'étudiant</div>
+
+        <div class="form-group">
+            <label class="question-title">Cycle d'étude <span class="required">*</span></label>
+            <select name="Cycle" required="">
+                <option value="" selected="selected">Sélectionner ton niveau...</option>
+                <option value="BTS 1">BTS 1</option>
+                <option value="BTS 2">BTS 2</option>
+                <option value="Licence 1">Licence 1</option>
+                <option value="Licence 2">Licence 2</option>
+                <option value="Licence 3">Licence 3</option>
+                <option value="Master 1 / 2">Master 1 ou 2</option>
+                <option value="Autre">Autre</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="question-title">Dans quel bâtiment suis-tu le plus souvent tes cours ? <span class="required">*</span></label>
+            <div class="option-group">
+                <label class="option-item"><input type="radio" name="Batiment" value="Bâtiment A" required=""> Bâtiment A (Salles TP, labos)</label>
+                <label class="option-item"><input type="radio" name="Batiment" value="Bâtiment B" required=""> Bâtiment B (Salles de cours, Direction)</label>
+                <label class="option-item"><input type="radio" name="Batiment" value="Les deux également" required=""> Les deux bâtiments</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="question-title">Appareil(s) connecté(s) au Wi-Fi <span class="required">*</span></label>
+            <div class="option-group">
+                <label class="option-item"><input type="checkbox" name="Appareil[]" value="PC Portable"> PC portable personnel</label>
+                <label class="option-item"><input type="checkbox" name="Appareil[]" value="Téléphone"> Smartphone / Téléphone</label>
+                <label class="option-item"><input type="checkbox" name="Appareil[]" value="PC Salle TP"> PC de bureau en salle de TP</label>
+            </div>
+        </div>
+
+        <!-- SECTION 2 -->
+        <div class="section-title">📶 2. Qualité et Problèmes du Réseau Wi-Fi</div>
+
+        <div class="form-group">
+            <label class="question-title">Comment juges-tu la qualité générale du Wi-Fi campus ? <span class="required">*</span></label>
+            <div class="option-group">
+                <label class="option-item"><input type="radio" name="Qualite" value="Très bonne" required=""> Très bonne</label>
+                <label class="option-item"><input type="radio" name="Qualite" value="Moyenne" required=""> Passable / Moyenne</label>
+                <label class="option-item"><input type="radio" name="Qualite" value="Mauvaise" required=""> Mauvaise</label>
+                <label class="option-item"><input type="radio" name="Qualite" value="Très mauvaise" required=""> Très mauvaise (inutilisable)</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="question-title">T'arrive-t-il d'être éjecté(e) ou déconnecté(e) brusquement du Wi-Fi ? <span class="required">*</span></label>
+            <div class="option-group">
+                <label class="option-item"><input type="radio" name="Deconnexion" value="Très souvent" required=""> Très souvent (presque tous les jours)</label>
+                <label class="option-item"><input type="radio" name="Deconnexion" value="Régulièrement" required=""> Régulièrement (1-2 fois par semaine)</label>
+                <label class="option-item"><input type="radio" name="Deconnexion" value="Rarement" required=""> Rarement</label>
+                <label class="option-item"><input type="radio" name="Deconnexion" value="Jamais" required=""> Jamais</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="question-title">Selon toi, quelles sont les causes principales ?</label>
+            <div class="option-group">
+                <label class="option-item"><input type="checkbox" name="Causes[]" value="Trop d'intrus exterieurs"> Des gens hors campus utilisent le mot de passe</label>
+                <label class="option-item"><input type="checkbox" name="Causes[]" value="Telechargements abusifs"> Certains téléchargent de gros fichiers / films</label>
+                <label class="option-item"><input type="checkbox" name="Causes[]" value="Multiplication des AP"> Trop de points d'accès et interférences</label>
+                <label class="option-item"><input type="checkbox" name="Causes[]" value="Materiel sature"> Routeurs/Switchs saturés</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="question-title">As-tu déjà partagé le mot de passe Wi-Fi avec un non-étudiant ?</label>
+            <div class="option-group">
+                <label class="option-item"><input type="radio" name="Partage_Mot_de_passe" value="Oui"> Oui</label>
+                <label class="option-item"><input type="radio" name="Partage_Mot_de_passe" value="Non"> Non</label>
+                <label class="option-item"><input type="radio" name="Partage_Mot_de_passe" value="Préfère ne pas répondre"> Préfère ne pas répondre</label>
+            </div>
+        </div>
+
+        <!-- SECTION 3 -->
+        <div class="section-title">🔑 3. Nouvelle solution (Identifiant personnel)</div>
+
+        <div class="form-group">
+            <label class="question-title">Serais-tu favorable à un 
+compte Wi-Fi personnel (identifiant + mot de passe individuel) pour 
+bloquer les personnes non autorisées ? <span class="required">*</span></label>
+            <div class="option-group">
+                <label class="option-item"><input type="radio" name="Avis_Compte_Personnel" value="Tout à fait favorable" required=""> Tout à fait favorable (fin des intrus)</label>
+                <label class="option-item"><input type="radio" name="Avis_Compte_Personnel" value="Plutôt favorable" required=""> Plutôt favorable</label>
+                <label class="option-item"><input type="radio" name="Avis_Compte_Personnel" value="Défavorable" required=""> Défavorable</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="question-title">Note globale du réseau actuel (1 = Catastrophique, 10 = Excellent) <span class="required">*</span></label>
+            <select name="Note_Globale" required="">
+                <option value="1">1 / 10 (Inutilisable)</option>
+                <option value="2">2 / 10</option>
+                <option value="3">3 / 10</option>
+                <option value="4">4 / 10</option>
+                <option value="5" selected="selected">5 / 10 (Moyen)</option>
+                <option value="6">6 / 10</option>
+                <option value="7">7 / 10</option>
+                <option value="8">8 / 10</option>
+                <option value="9">9 / 10</option>
+                <option value="10">10 / 10 (Parfait)</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label class="question-title">Un commentaire ou suggestion libre pour l'administration IT ?</label>
+            <textarea name="Commentaire" placeholder="Ex: Débit insuffisant en salle TP réseau, besoin d'accès stable aux supports de cours..."></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">🚀 Envoyer mes réponses</button>
+    </form>
+
+    <div class="footer">
+        Institut Supérieur ISESTMA • Enquête de satisfaction et modernisation de l'infrastructure
+    </div>
+</div>
+
+
+</body></html>
